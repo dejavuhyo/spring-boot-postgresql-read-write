@@ -1,4 +1,4 @@
-# Spring Boot PostgreSQL Read Write Setting
+# Spring Boot PostgreSQL Read Write Separation
 
 ## 1. 설명
 Spring Boot에서 PostgreSQL의 Read, Write 계정을 분리하여 select는 Read를 사용하고 insert, update, delete는 Write 계정을 사용하는 예제이다. 포트는 8080을 사용한다.
