@@ -58,7 +58,8 @@ Spring Boot에서 PostgreSQL의 Read, Write 계정을 분리하여 select는 Rea
 {
   "username": "updated_name",
   "email": "updated@example.com"
-}```
+}
+```
 
 ### 5) 사용자 삭제 (Write 테스트)
 
