@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.readwrite.mapper.UserMapper">
+
+    <insert id="insert" parameterType="com.example.readwrite.model.User" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO users (username, email)
+        VALUES (#{username}, #{email})
+    </insert>
+
+    <update id="update" parameterType="com.example.readwrite.model.User">
+        UPDATE users
+        SET username = #{username},
+            email    = #{email}
+        WHERE id = #{id}
+    </update>
+
+    <delete id="delete">
+        DELETE
+        FROM users
+        WHERE id = #{id}
+    </delete>
+
+    <select id="findById" resultType="com.example.readwrite.model.User">
+        SELECT id, username, email
+        FROM users
+        WHERE id = #{id}
+    </select>
+
+    <select id="findAll" resultType="com.example.readwrite.model.User">
+        SELECT id, username, email
+        FROM users
+    </select>
+
+</mapper>

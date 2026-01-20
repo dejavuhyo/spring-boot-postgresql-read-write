@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: read-write
+
+  datasource:
+    write:
+      driver-class-name: org.postgresql.Driver
+      jdbc-url: jdbc:postgresql://localhost:5432/postgres
+      username: write_user
+      password: postgres
+    read:
+      driver-class-name: org.postgresql.Driver
+      jdbc-url: jdbc:postgresql://localhost:5432/postgres
+      username: read_user
+      password: postgres
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.example.readwrite.model
+
+logging:
+  level:
+    org.springframework.transaction.interceptor: trace
+    org.springframework.jdbc.datasource.DataSourceTransactionManager: debug
+    org.springframework.jdbc.datasource: debug
+    org.springframework.transaction: debug
