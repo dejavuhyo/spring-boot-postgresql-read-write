@@ -50,8 +50,6 @@ Spring Boot에서 PostgreSQL의 Read, Write 계정을 분리하여 select는 Rea
 
 * URL: `http://localhost:8080/api/users/1`
 
-* Body: `{"username": "updated_name", "email": "updated@example.com"}`
-
 * Body (JSON):
 
 ```json
