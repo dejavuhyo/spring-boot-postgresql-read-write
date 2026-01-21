@@ -36,8 +36,7 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional(readOnly = true) // Read DB(Slave) 사용
     public User getUserById(Long id) {
-        return userMapper.findById(id)
-                .orElseThrow(() -> new RuntimeException("사용자를 찾을 수 없습니다. ID: " + id));
+        return userMapper.findById(id).orElseThrow(() -> new RuntimeException("사용자를 찾을 수 없습니다. ID: " + id));
     }
 
     @Override

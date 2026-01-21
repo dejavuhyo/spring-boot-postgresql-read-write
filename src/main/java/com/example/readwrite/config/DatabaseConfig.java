@@ -10,9 +10,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
-import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy;
-import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
@@ -65,11 +63,5 @@ public class DatabaseConfig {
         sessionFactory.setDataSource(dataSource);
         sessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:mapper/*.xml"));
         return sessionFactory.getObject();
-    }
-
-    @Bean
-    public PlatformTransactionManager transactionManager(@Qualifier("dataSource") DataSource dataSource) {
-        // @Qualifier("dataSource")를 추가하여 트랜잭션 매니저도 Proxy 데이터소스를 바라보게 함
-        return new DataSourceTransactionManager(dataSource);
     }
 }
